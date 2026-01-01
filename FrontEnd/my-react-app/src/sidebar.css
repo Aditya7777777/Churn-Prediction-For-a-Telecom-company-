@@ -1,0 +1,104 @@
+
+.container{
+  display: flex;
+  height: 100%;
+}
+
+
+.container-dynamic{
+     /* Pushes the content over to the right to visually clear the fixed sidebar */
+  width: 100vw;
+  height: 100vh; 
+  margin-left: 25%;
+  /* Allows content to be scrolled vertically within this div */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.containter-fixed{
+  position: fixed;
+  /* Start from the top-left of the viewport */
+  top: 0;
+  left: 0;
+  /* Set the width as requested */
+  width: 25%;
+  /* Set height to full viewport height */
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 10; /* Ensures it stays above the other content */
+  border-right: 1px solid #06B6D4;
+}
+
+
+.bar{
+  margin-left: 15rem ;
+  margin-top: 10rem;
+  display: block;
+  width: 100vh;
+}
+
+.proBar {
+  width: 100vh;
+  height: 5rem;
+}
+
+.proBar .p-progressbar-value{
+  background-color: #06B6D4;
+}
+
+.heading{
+  display: block;
+}
+
+.container-display{
+  /* 1. Ensure it is a flex container */
+  display: flex;
+  
+  /* 2. Change the direction from horizontal (row) to vertical (column) */
+  flex-direction: column;
+}
+
+/* 1. Style the Menubar component itself */
+.custom-navbar .p-menubar {
+    background-color: #06B6D4 !important;
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures it spans the full width */
+    z-index: 1000; /* Ensures it stays above all other content */
+    border: none;
+    border-radius: 0;
+}
+
+/* 2. Style the custom 'telcopredict' text for visibility */
+.app-title-container {
+    display: flex;
+    align-items: center;
+    color: white; /* Make the text white for contrast */
+}
+
+/* 3. Adjust the body/content to start BELOW the fixed navbar */
+/* Assuming the navbar height is about 60px (you might need to adjust this) */
+body {
+    padding-top: 60px; /* Crucial: Pushes all content down below the fixed navbar */
+    margin: 0;
+}
+
+.container-tempbar{
+  padding-top: 3rem;
+}
+
+.force-ltr-input {
+    direction: ltr !important;
+    text-align: left !important; /* Optional: ensures cursor starts on the left */
+}
+
+.btnSubmit{
+  width: 75%;
+  text-align: center;
+  background-color: #06B6D4;
+}
+

@@ -3,6 +3,7 @@ import joblib
 import pandas as pd
 import warnings 
 from flask_cors import CORS
+import os
 
 # Ignore common warnings (like version warnings from scikit-learn/pandas)
 warnings.filterwarnings("ignore") 
@@ -12,13 +13,19 @@ app = Flask(__name__)
 CORS(app) 
 
 # --- Model Loading (Place this block before the routes) ---
+
+# 1. Get the absolute path to the folder where App.py lives
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# 2. Create the full path to the model file
+model_path = os.path.join(BASE_DIR, "sklearn_churn_model_6_features.joblib")
+
 try:
-    # Attempt to load the model file
-    with open("sklearn_churn_model_6_features.joblib","rb") as file:
-        model = joblib.load(file)
+    # 3. Load using the full absolute path
+    model = joblib.load(model_path)
+    print("Model loaded successfully!")
 except FileNotFoundError:
-    print("Error: Model file 'sklearn_churn_model_6_features.joblib' not found.")
-    # 2. SYNTAX FIX: Using 'None' (capital N) prevents server crash.
+    print(f"Error: Model file not found at {model_path}")
     model = None
 # -----------------------------------------------------------
 

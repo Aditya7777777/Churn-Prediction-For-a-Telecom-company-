@@ -5,7 +5,8 @@ const CheckerComp = () => {
     const [statusColor, setStatusColor] = useState('orange');
 
     // Step 2: Define the URL of your Flask endpoint
-    const FLASK_API_URL = 'http://127.0.0.1:5000/api/ping'; 
+    //const FLASK_API_URL = 'http://127.0.0.1:5000/api/ping'; //For locally running the app
+     const FLASK_API_URL =  "https://churn-prediction-for-a-telecom-company-1.onrender.com";
 
     useEffect(() => {
         const checkConnection = async () => {

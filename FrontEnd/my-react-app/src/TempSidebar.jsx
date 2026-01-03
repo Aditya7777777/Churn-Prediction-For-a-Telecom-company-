@@ -78,7 +78,7 @@ export default function TempSidebar({onPredictionComplete}) {
 
         try {
             //const flaskApiUrl = 'http://127.0.0.1:5000/predict'; //if you are running locally 
-            const flaskApiUrl = 'https://churn-prediction-for-a-telecom-company-1.onrender.com'; //after deploying on render
+            const flaskApiUrl = 'https://churn-prediction-for-a-telecom-company-1.onrender.com/predict'; //after deploying on render
             
 
  

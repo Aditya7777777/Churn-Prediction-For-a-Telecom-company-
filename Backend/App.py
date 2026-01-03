@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
 # 1. CORS FIX: This line ensures the preflight (OPTIONS) request gets a 200 OK response.
-CORS(app) 
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # --- Model Loading (Place this block before the routes) ---
 
@@ -29,6 +29,10 @@ except FileNotFoundError:
     model = None
 # -----------------------------------------------------------
 
+
+@app.route('/', methods=['GET', 'OPTIONS'])
+def home():
+    return jsonify({"status": "ok", "message": "Backend is live"}), 200
 
 # Route made to check backend connectivity 
 @app.route('/api/ping',methods=['GET'])

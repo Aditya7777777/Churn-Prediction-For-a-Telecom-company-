@@ -29,6 +29,10 @@ except FileNotFoundError:
     model = None
 # -----------------------------------------------------------
 
+@app.route('/')
+def home():
+    # This ensures that when the frontend or Render checks the base URL, it gets a 200 OK
+    return jsonify({"message": "Backend is running!"}), 200
 
 # Route made to check backend connectivity 
 @app.route('/api/ping',methods=['GET'])

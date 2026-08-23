@@ -9,7 +9,7 @@ Customer churn refers to the situation where a customer stops using a company’
 
 This project is a **Machine Learning–based Churn Prediction Application** that predicts whether a customer is likely to **churn or not churn** based on **six important parameters**. The prediction helps organizations identify high-risk customers and take proactive measures to retain them.
 
-The model is trained using the **Random Forest Algorithm** and is integrated into a user-friendly application interface where users can input customer details and get churn predictions in real time.
+The model is trained using the **Random Forest Algorithm** and is integrated into a user-friendly application interface where users can input customer details and get churn predictions.
 
 The model training was performed in Jupyter Notebook, and relevant screenshots are included for reference.
 
